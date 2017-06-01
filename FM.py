@@ -61,18 +61,18 @@ class FM(BaseEstimator, TransformerMixin):
         # bind params to class
         self.batch_size = batch_size
         self.learning_rate = learning_rate
-        self.hidden_factor = hidden_factor
-        self.save_file = save_file
+        self.hidden_factor = hidden_factor  # ?
+        self.save_file = save_file  # ?
         self.pretrain_flag = pretrain_flag
         self.loss_type = loss_type
-        self.features_M = features_M
-        self.lamda_bilinear = lamda_bilinear
-        self.keep = keep
+        self.features_M = features_M  # ?
+        self.lamda_bilinear = lamda_bilinear  # ?
+        self.keep = keep  # ?
         self.epoch = epoch
         self.random_seed = random_seed
         self.optimizer_type = optimizer_type
-        self.batch_norm = batch_norm
-        self.verbose = verbose
+        self.batch_norm = batch_norm  # ?
+        self.verbose = verbose  # ?
         # performance of each epoch
         self.train_rmse, self.valid_rmse, self.test_rmse = [], [], []
 
@@ -91,7 +91,7 @@ class FM(BaseEstimator, TransformerMixin):
             self.train_features = tf.placeholder(tf.int32, shape=[None, None])  # None * features_M
             self.train_labels = tf.placeholder(tf.float32, shape=[None, 1])  # None * 1
             self.dropout_keep = tf.placeholder(tf.float32)
-            self.train_phase = tf.placeholder(tf.bool)
+            self.train_phase = tf.placeholder(tf.bool)  # ?
 
             # Variables.
             self.weights = self._initialize_weights()
